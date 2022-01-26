@@ -1,13 +1,13 @@
 import sys
 
-from PySide6.QtWidgets import QApplication
-
+from PySide2.QtWidgets import QApplication
 from SerialPortWindow import SerialPortWindow
-from SerialInfo import SerialInfo
+from SerialPortFunction import SerialInfo, SerialPortConnecter
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    view = SerialPortWindow(serialInfo=SerialInfo())
+
+    view = SerialPortWindow(serialInfo=SerialInfo(), serialPortConnector=SerialPortConnecter())
     view.show()
 
-    sys.exit(app.exec())
+    sys.exit(app.exec_())
